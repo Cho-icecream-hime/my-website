@@ -27,6 +27,16 @@
             border-radius: 12px;
             padding: 12px;
         }
+        .count-box{
+            background-color: white;
+            border: 2px solid #e879a9;
+            border-radius: 999px;
+            color: #a63d6c;
+            font-weight: bold;
+        }
+        #click-count{
+            font-size: 1.3em;
+        }
         button {
             background-color: #b24a78;
             color: white;
@@ -44,15 +54,24 @@
      　<p>こんにちは！超アイス姫です♡</p>
     </main>
     <button id="surprise-button">♡押してね♡</button>
+    <p class="count-box">押した回数:<span id="click-count">0</span>回</p>
     <audio id="button-sound" src="click.mp3" preload="auto"></audio>
     <script>
-        document.getElementById("surprise-button").addEventListener("click",function () { 
-            const sound =document.getElementById("button-sound");
+        let clickCount = 0;
+
+        const button =document.getElementById("surprise-button");
+        const sound =document.getElementById("button-sound");
+        const countDisplay = document.getElementById("click-count");
+
+        button.addEventListener("click",function () {
+            clickCount = clickCount + 1;
+            countDisplay.textContent = clickCount;
+
             sound.currentTime = 0;
             sound.play();
-                        
-            document.getElementById("surprise-button").textContent = "押してくれてありがとう♡";
-    });
+
+            button.textContent = "押してくれてありがとう♡"
+        })
     </script>
 </body>
 </html>
