@@ -20,7 +20,8 @@
             box-shadow: 0 8px 20px rgba(200,100,150,0.18);
         }
         p {
-            display: inline-block;
+            width: fit-content;
+            margin: 12px auto;
             background-color: #fff8fc;
             border: 2px dashed #d138dc;
             border-radius: 12px;
@@ -43,9 +44,14 @@
      　<p>こんにちは！超アイス姫です♡</p>
     </main>
     <button id="surprise-button">♡押してね♡</button>
+    <audio id="button-sound" src="click.mp3" preload="auto"></audio>
     <script>
         document.getElementById("surprise-button").addEventListener("click",function () { 
-            alert("押してくれてありがとう♡");
+            const sound =document.getElementById("button-sound");
+            sound.currentTime = 0;
+            sound.play();
+                        
+            document.getElementById("surprise-button").textContent = "押してくれてありがとう♡";
     });
     </script>
 </body>
