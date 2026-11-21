@@ -22,9 +22,18 @@
         p {
             display: inline-block;
             background-color: #fff8fc;
-            border: 2xp dashed #d138dc;
+            border: 2px dashed #d138dc;
             border-radius: 12px;
             padding: 12px;
+        }
+        button {
+            background-color: #b24a78;
+            color: white;
+            border: none;
+            border-radius: 999px;
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -33,5 +42,11 @@
      　<h1>超アイス姫のホームページへようこそ♡</h1>
      　<p>こんにちは！超アイス姫です♡</p>
     </main>
+    <button id="surprise-button">♡押してね♡</button>
+    <script>
+        document.getElementById("surprise-button").addEventListener("click",function () { 
+            alert("押してくれてありがとう♡");
+    });
+    </script>
 </body>
 </html>
